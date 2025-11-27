@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Birthday Wishes ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top, #ffb3c6, #ff4d6d);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      color: #fff;
+    }
+
+    .card {
+      width: 90%;
+      max-width: 420px;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 30px;
+      border-radius: 25px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      position: relative;
+      animation: fadeIn 1.5s ease;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+      text-shadow: 0 3px 7px rgba(0,0,0,0.4);
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .heart {
+      font-size: 40px;
+      color: #ffccd5;
+      animation: heartbeat 1.3s infinite;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.35); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .floating-heart {
+      position: fixed;
+      font-size: 22px;
+      animation: floatUp 4s linear infinite;
+      opacity: 0.7;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(50vh) scale(0.8); opacity: 1; }
+      100% { transform: translateY(-100vh) scale(1.4); opacity: 0; }
+    }
+
+    .btn {
+      padding: 12px 20px;
+      background: #fff;
+      color: #ff4d6d;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #ffe6ec;
+      transform: scale(1.05);
+    }
+
+/* ===== FULL SCREEN BLUR LAYER ===== */
+#blur-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(15px);
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: all 0.6s ease;
+}
+
+/* Remove blur when countdown completes */
+#blur-overlay.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* ===== COUNTDOWN BOX ===== */
+.countdown-box {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 40px 60px;
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  text-align: center;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+#countdown {
+  font-size: 70px;
+  font-weight: 900;
+}
+
+/* Just for demo content */
+.content {
+  margin-top: 150px;
+  text-align: center;
+  color: #fff;
+  font-family: Arial;
+}
+body {
+  background: linear-gradient(135deg, #1d2671, #c33764);
+  min-height: 100vh;
+  margin: 0;
+}
+
+  </style>
+</head>
+<body>
+
+   
+<div id="blur-overlay" class="blur-active">
+  <div class="countdown-box">
+    <h1 id="countdown">5</h1>
+    <p>Please wait…</p>
+  </div>
+</div>
+
+
+
+<script src="script.js"></script>
+</div>
+<script>
+ let timeLeft = 5;   // change countdown seconds here
+let countdownElement = document.getElementById("countdown");
+let blurOverlay = document.getElementById("blur-overlay");
+
+let interval = setInterval(() => {
+  countdownElement.textContent = timeLeft;
+  timeLeft--;
+
+  if (timeLeft < 0) {
+    clearInterval(interval);
+
+    // Remove blur effect
+    blurOverlay.classList.add("hide");
+  }
+
+}, 1000);
+
+</script>
+
+  <div class="card">
+    <div class="heart">❤️</div>
+    <h1>kannammaaaaa❣ Happiest birthday rahhhh hearttttt❤</h1>
+    <p>
+     
+    </p>
+    <button class="btn" onclick="revealMessage()">Click for a Surprise 💝</button>
+  </div>
+
+  <script>
+    function createHearts() {
+      const heart = document.createElement("div");
+      heart.classList.add("floating-heart");
+      heart.innerHTML = "💗";
+      heart.style.left = Math.random() * window.innerWidth + "px";
+      heart.style.animationDuration = (Math.random() * 2 + 3) + "s";
+      document.body.appendChild(heart);
+
+      setTimeout(() => heart.remove(), 4000);
+    }
+    setInterval(createHearts, 300);
+
+    function revealMessage() {
+      alert("I am so lucky to have you in my life ❤️");
+    }
+  </script>
+
+  
+  <script>
+    function createHearts() {
+      const heart = document.createElement("div");
+      heart.classList.add("floating-heart");
+      heart.innerHTML = "💗";
+      heart.style.left = Math.random() * window.innerWidth + "px";
+      heart.style.animationDuration = (Math.random() * 2 + 3) + "s";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 4000);
+    }
+    setInterval(createHearts, 250);
+
+    function revealMessage() {
+      const msg = document.createElement("div");
+      msg.style.position = "fixed";
+      msg.style.top = "50%";
+      msg.style.left = "50%";
+      msg.style.transform = "translate(-50%, -50%)";
+      msg.style.padding = "25px 35px";
+      msg.style.background = "rgba(255,255,255,0.9)";
+      msg.style.color = "#ff4d6d";
+      msg.style.borderRadius = "20px";
+      msg.style.fontSize = "1.3rem";
+      msg.style.fontWeight = "bold";
+      msg.style.boxShadow = "0 5px 20px rgba(0,0,0,0.3)";
+      msg.style.animation = "popUp 0.6s ease";
+      msg.innerHTML = "poveee pandiii pillaaaaa";
+      document.body.appendChild(msg);
+      setTimeout(() => msg.remove(), 3000);
+
+      showNameAnimation();
+      setTimeout(showSecondSurprise, 2000);
+      setTimeout(showThirdSurprise, 4000);
+    }
+
+    function showNameAnimation() {
+      const name = document.createElement("div");
+      name.innerText = "For You, My Princess 💕";
+      name.style.position = "fixed";
+      name.style.bottom = "20px";
+      name.style.left = "50%";
+      name.style.transform = "translateX(-50%)";
+      name.style.fontSize = "1.6rem";
+      name.style.fontWeight = "bold";
+      name.style.color = "#fff";
+      name.style.animation = "glowName 2.5s ease infinite";
+      document.body.appendChild(name);
+      setTimeout(() => name.remove(), 5000);
+    }
+
+    function showSecondSurprise() {
+      const box = document.createElement("div");
+      box.innerHTML = "hehheeehehehehehe";
+      stylePopup(box);
+    }
+
+    function showThirdSurprise() {
+      const box = document.createElement("div");
+      box.innerHTML = "feelllll ayyyyavaa bokkaalee😅";
+      stylePopup(box);
+    }
+
+    function stylePopup(el) {
+      el.style.position = "fixed";
+      el.style.top = Math.random() * 70 + "%";
+      el.style.left = "50%";
+      el.style.transform = "translateX(-50%)";
+      el.style.padding = "18px 28px";
+      el.style.background = "rgba(255,255,255,0.85)";
+      el.style.color = "#ff4d6d";
+      el.style.borderRadius = "18px";
+      el.style.fontSize = "1.2rem";
+      el.style.fontWeight = "600";
+      el.style.boxShadow = "0 4px 15px rgba(0,0,0,0.2)";
+      el.style.animation = "fadeMessage 3s ease";
+      document.body.appendChild(el);
+      setTimeout(() => el.remove(), 5000);
+    }
+
+
+
+<!-- 💖 RANDOM QUOTES -->
+
+const surpriseQuotes = [
+  "buujjjuuluuuu💖",
+  "Nuvvee naa fav pandi pilllaaa 💕",
+  "Age peruguthundhi gani lav matram thaggav😁",
+  "velli paduko 💞",
+  "Pottidhiii pandi pillllaaa😅💗",
+  "Em lev cheppadaniki 😁💕",
+  "Chalaa years nundi abadhalu chepthu vastunna ❤️",
+  "Ee roju kuda abadhalu cheppadam navvalla kadhu 💋",
+  "Nenu dorkadam nee adrustam 🤯💓",
+  "2021 April nundi eyes poyayi😌💝",
+  "pandi pilla kuda cute ga kanipistundhi😍"
+];
+
+function showRandomSurprise() {
+  const randomText = surpriseQuotes[Math.floor(Math.random() * surpriseQuotes.length)];
+  const box = document.createElement("div");
+  box.innerHTML = randomText;
+  stylePopup(box);
+}
+
+/* ⭐ NAME GLOW */
+function showNameAnimation() {
+  const name = document.createElement("div");
+  name.classList.add("name-glow");
+  name.innerText = "For You, My Princess 💕";
+  name.style.position = "fixed";
+  name.style.bottom = "20px";
+  name.style.left = "50%";
+  name.style.transform = "translateX(-50%)";
+  name.style.fontSize = "1.6rem";
+  name.style.fontWeight = "bold";
+  name.style.color = "#fff";
+  name.style.animation = "glowName 2.5s ease infinite";
+  document.body.appendChild(name);
+  setTimeout(() => name.remove(), 3000);
+}
+
+/* 🎀 POPUP STYLING (STAYS 4 SECONDS) */
+function stylePopup(el) {
+  el.classList.add("popup-msg");
+  el.style.position = "fixed";
+  el.style.top = Math.random() * 70 + "%";
+  el.style.left = "50%";
+  el.style.transform = "translateX(-50%)";
+  el.style.padding = "18px 28px";
+  el.style.background = "rgba(255,255,255,0.85)";
+  el.style.color = "#ff4d6d";
+  el.style.borderRadius = "18px";
+  el.style.fontSize = "1.2rem";
+  el.style.fontWeight = "600";
+  el.style.boxShadow = "0 4px 15px rgba(0,0,0,0.2)";
+  el.style.animation = "fadeMessage 4s ease";
+  document.body.appendChild(el);
+
+  setTimeout(() => el.remove(), 4000);
+}
+
+/* ❤️ Show quote every 4 secs */
+setInterval(showRandomSurprise, 4000);
+</script>
+
+<!-- 💖 ANIMATIONS + MOBILE CSS -->
+<style>
+/* Fade animation */
+@keyframes fadeMessage {
+  0% { opacity: 0; transform: translateY(20px); }
+  50% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(-20px); }
+}
+
+/* Glow animation */
+@keyframes glowName {
+  0% { text-shadow: 0 0 10px #fff; }
+  50% { text-shadow: 0 0 25px #ffd6e0; }
+  100% { text-shadow: 0 0 10px #fff; }
+}
+
+/* ----------------------------------------
+        📱 MOBILE OPTIMIZED
+----------------------------------------- */
+
+@media (max-width: 768px) {
+  .popup-msg {
+    font-size: 1rem !important;
+    padding: 14px 18px !important;
+    max-width: 85% !important;
+    line-height: 1.4 !important;
+    border-radius: 14px !important;
+    text-align: center !important;
+    word-wrap: break-word;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.25) !important;
+  }
+
+  .name-glow {
+    font-size: 1.3rem !important;
+    bottom: 15px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .popup-msg {
+    font-size: 0.9rem !important;
+    padding: 12px 16px !important;
+    max-width: 90% !important;
+  }
+
+  .name-glow {
+    font-size: 1rem !important;
+  }
+}
+</style>
+
+
+
+
+</body>
+</html>
